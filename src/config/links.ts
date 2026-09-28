@@ -2,6 +2,7 @@ export type LinkItem = {
   id: string;
   label: string;
   url: string;
+  icon?: string;
 };
 
 export type Profile = {
@@ -12,12 +13,27 @@ export type Profile = {
 
 export const profile: Profile = {
   name: "이준호",
-  bio: "서강대학교 재학 중인 학생",
-  avatarUrl: "/avatar.svg",
+  bio: "심리학/컴퓨터공학 전공한 서강대학교 학생",
+  avatarUrl: "/profile_a.jpeg",
 };
 
 export const links: LinkItem[] = [
-  { id: "github", label: "GitHub", url: "https://github.com/example" },
-  { id: "notion", label: "Notion", url: "https://notion.so/example" },
-  { id: "blog", label: "Blog", url: "https://example.com/blog" },
+  {
+    id: "github",
+    label: "GitHub",
+    url: "https://github.com/francespaceship",
+    icon: "https://cdn.simpleicons.org/github",
+  },
+  {
+    id: "notion",
+    label: "Notion",
+    url: "https://app.notion.com/p/PORTFOLIO-3d33581afdce80a1bee8dcfcc6c3e721",
+    icon: "https://cdn.simpleicons.org/notion",
+  },
+  {
+    id: "email",
+    label: "E-Mail",
+    url: "mailto:coolandy800@naver.com",
+    icon: "📮",
+  },
 ];

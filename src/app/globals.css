@@ -1,26 +1,114 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070c;
+  --foreground: #f5f6f8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Pretendard Variable", var(--font-geist-sans), ui-sans-serif, sans-serif;
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Pretendard Variable", var(--font-geist-sans), ui-sans-serif, sans-serif;
+}
+
+@keyframes cola-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-4deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes cola-cap-pop {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(10px, -46px) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fizz-rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-56px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.cola-shake {
+  animation: cola-shake 0.5s ease-in-out;
+}
+
+.cola-cap-pop {
+  animation: cola-cap-pop 0.9s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+.fizz-bubble {
+  animation: fizz-rise 0.9s ease-out forwards;
+}
+
+@keyframes steam-rise {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  55% {
+    transform: translateY(-12px) scaleX(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-26px) scaleX(0.9);
+    opacity: 0;
+  }
+}
+
+.steam-wisp {
+  opacity: 0;
+}
+
+.group:hover .steam-wisp,
+.group:focus-visible .steam-wisp {
+  animation: steam-rise 1.8s ease-in-out infinite;
+}
+
+@keyframes sun-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 40px 14px rgba(255, 195, 90, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 56px 20px rgba(255, 195, 90, 0.75);
+  }
+}
+
+.sun-glow {
+  animation: sun-pulse 2.4s ease-in-out infinite;
 }
