@@ -1,5 +1,5 @@
 import Profile from "@/components/Profile";
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ColaCan from "@/components/ColaCan";
 import CoffeeCup from "@/components/CoffeeCup";
 import IntroOverlay from "@/components/IntroOverlay";
@@ -22,11 +22,7 @@ export default function Home() {
       </div>
       <div className="relative w-full max-w-sm">
         <Profile profile={profile} />
-        <div className="mt-10 flex flex-col gap-4">
-          {links.map((link) => (
-            <LinkCard key={link.id} link={link} />
-          ))}
-        </div>
+        <LinkList links={links} />
       </div>
     </main>
   );

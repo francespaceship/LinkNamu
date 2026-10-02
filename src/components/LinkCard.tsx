@@ -1,6 +1,12 @@
 import type { LinkItem } from "@/config/links";
 
-export default function LinkCard({ link }: { link: LinkItem }) {
+export default function LinkCard({
+  link,
+  count,
+}: {
+  link: LinkItem;
+  count?: number;
+}) {
   const isImageIcon = link.icon?.startsWith("http");
 
   return (
@@ -19,6 +25,11 @@ export default function LinkCard({ link }: { link: LinkItem }) {
           <span className="relative text-lg leading-none">{link.icon}</span>
         ))}
       <span className="relative">{link.label}</span>
+      {count !== undefined && (
+        <span className="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-normal text-white/50">
+          {count}회
+        </span>
+      )}
     </a>
   );
 }
